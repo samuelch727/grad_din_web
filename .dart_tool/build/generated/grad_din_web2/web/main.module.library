@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter_web_ui|lib/ui.dart","grad_din_web2|lib/main.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":true}

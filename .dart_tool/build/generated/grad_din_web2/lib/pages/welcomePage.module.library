@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter_web|lib/material.dart","flutter_web_ui|lib/ui.dart","firebase|lib/firebase.dart","grad_din_web2|lib/system/systemColor.dart","http|lib/http.dart","grad_din_web2|lib/data.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html","convert","async"],"hasMain":false}
