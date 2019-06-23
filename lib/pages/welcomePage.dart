@@ -329,7 +329,7 @@ class _welcomePageState extends State < welcomePage > {
                     borderRadius: BorderRadius.circular(5.0)),
                   onPressed: () {
                     html.window.open(
-                      'https://github.com/samuelch727/grad_din_web2',
+                      'https://github.com/samuelch727/grad_din_web',
                       'github');
                   },
                   child: Row(

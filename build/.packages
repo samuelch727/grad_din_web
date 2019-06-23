@@ -21,6 +21,7 @@ convert:packages/convert/
 crypto:packages/crypto/
 csslib:packages/csslib/
 dart_style:packages/dart_style/
+firebase:packages/firebase/
 fixnum:packages/fixnum/
 flutter_web:packages/flutter_web/
 flutter_web_ui:packages/flutter_web_ui/
