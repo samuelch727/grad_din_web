@@ -1,18 +1,11 @@
 // import 'package:flutter_web_ui/ui.dart';
 import 'package:flutter_web/material.dart';
-import 'package:flutter_web_ui/ui.dart'
-as prefix0;
-import 'package:firebase/firebase.dart'
-as firebase;
 import 'package:grad_din_web2/system/systemColor.dart';
 import 'dart:html'
 as html;
-import 'package:http/http.dart'
-as http;
-import 'dart:convert';
-import 'dart:async';
 import 'package:grad_din_web2/data.dart'
 as data;
+import 'dart:async';
 
 class welcomePage extends StatefulWidget {
   welcomePage({
@@ -24,19 +17,42 @@ class welcomePage extends StatefulWidget {
 
 class _welcomePageState extends State < welcomePage > {
   @override
+  var dateRemain;
+  var hoursRemain;
+  var minutesRemain;
+  var secondRemain;
+  DateTime now;
+  Timer timer;
+  void checkTime() {
+    DateTime events = DateTime(2019, 7, 5, 18, 15);
+    timer = Timer.periodic(
+      const Duration(seconds: 1),
+        (Timer timer) => setState(() {
+          now = DateTime.now();
+          dateRemain = events.difference(now).inDays;
+          hoursRemain = events.difference(now).inHours - dateRemain * 24;
+          minutesRemain = events.difference(now).inMinutes -
+            events.difference(now).inHours * 60;
+          // print('Date: $dateRemain Hour: $hoursRemain Min: $minutesRemain');
+        }));
+  }
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
+    checkTime();
     var _deviceWidth = MediaQuery.of(context).size.width;
     var _deviceHeight = MediaQuery.of(context).size.height;
     var _fontSize = [];
-    DateTime now = DateTime.now();
-    DateTime events = DateTime(2019, 7, 5, 18, 15);
-    final dateRemain = now.difference(events).inDays;
     if (_deviceWidth > 735) {
       _fontSize = [50.0, 30.0, 15.0];
     } else {
       _fontSize = [_deviceWidth / 10, _deviceWidth / 20, _deviceWidth / 35];
     }
-    print('Date remaining: $dateRemain');
     return Scaffold(
       backgroundColor: systemColor[0],
       body: ListView(
@@ -89,6 +105,73 @@ class _welcomePageState extends State < welcomePage > {
                         '2019 Graduation Party',
                         style: TextStyle(
                           color: Colors.white, fontSize: _fontSize[1]),
+                      ),
+                      Container(
+                        height: _deviceHeight / 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: < Widget > [
+                          Column(
+                            children: < Widget > [
+                              Text(
+                                '$dateRemain',
+                                style: TextStyle(
+                                  fontSize: _fontSize[0],
+                                  color: Colors.white),
+                              ),
+                              Text(
+                                'Days',
+                                style: TextStyle(
+                                  fontSize: _fontSize[2],
+                                  color: Colors.grey[300]),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            ' : ',
+                            style: TextStyle(
+                              fontSize: _fontSize[0], color: Colors.white),
+                          ),
+                          Column(
+                            children: < Widget > [
+                              Text(
+                                '$hoursRemain',
+                                style: TextStyle(
+                                  fontSize: _fontSize[0],
+                                  color: Colors.white),
+                              ),
+                              Text(
+                                'Hours',
+                                style: TextStyle(
+                                  fontSize: _fontSize[2],
+                                  color: Colors.grey[300]),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            ' : ',
+                            style: TextStyle(
+                              fontSize: _fontSize[0], color: Colors.white),
+                          ),
+                          Column(
+                            children: < Widget > [
+                              Text(
+                                '$minutesRemain',
+                                style: TextStyle(
+                                  fontSize: _fontSize[0],
+                                  color: Colors.white),
+                              ),
+                              Text(
+                                'Min',
+                                style: TextStyle(
+                                  fontSize: _fontSize[2],
+                                  color: Colors.grey[300]),
+                              ),
+                            ],
+                          ),
+                        ],
                       )
                     ],
                   )),
@@ -205,8 +288,9 @@ class _welcomePageState extends State < welcomePage > {
           Container(
             height: 30.0,
           ),
+          _deviceWidth > 534 ?
           Container(
-            color: Colors.grey[100],
+            color: Colors.grey[200],
             padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
             child: Row(
               children: < Widget > [
@@ -225,12 +309,13 @@ class _welcomePageState extends State < welcomePage > {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0)),
                   onPressed: () {
-                    html.window
-                      .open('mailto:plklfcgradparty2019@gmail.com', 'email');
+                    html.window.open(
+                      'mailto:plklfcgradparty2019@gmail.com', 'email');
                   },
                   child: Text(
                     'Contact Us',
-                    style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                    style:
+                    TextStyle(fontSize: 20, color: Colors.blueAccent),
                   ),
                   color: Colors.white,
                 ),
@@ -241,8 +326,9 @@ class _welcomePageState extends State < welcomePage > {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0)),
                   onPressed: () {
-                    html.window
-                      .open('https://github.com/samuelch727/grad_din_web2', 'github');
+                    html.window.open(
+                      'https://github.com/samuelch727/grad_din_web2',
+                      'github');
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -256,7 +342,8 @@ class _welcomePageState extends State < welcomePage > {
                       ),
                       Text(
                         ' GitHub',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                        style:
+                        TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ],
                   ),
@@ -264,7 +351,88 @@ class _welcomePageState extends State < welcomePage > {
                 ),
               ],
             ),
-          )
+          ) :
+          Container(
+            color: Colors.grey[200],
+            child: Column(
+              children: < Widget > [
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: Wrap(
+                    alignment: WrapAlignment.spaceEvenly,
+                    children: < Widget > [
+                      FlatButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                        onPressed: () {
+                          html.window.open(
+                            'mailto:plklfcgradparty2019@gmail.com',
+                            'email');
+                        },
+                        child: Text(
+                          'Contact Us',
+                          style: TextStyle(
+                            fontSize: 20, color: Colors.blueAccent),
+                        ),
+                        color: Colors.white,
+                      ),
+                      Container(
+                        width: 10,
+                      ),
+                      FlatButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                        onPressed: () {
+                          html.window.open(
+                            'https://github.com/samuelch727/grad_din_web2',
+                            'github');
+                        },
+                        child: Container(
+                          width: 100.0,
+                          child: Row(
+                            mainAxisAlignment:
+                            MainAxisAlignment.spaceEvenly,
+                            children: < Widget > [
+                              Container(
+                                height: 20.0,
+                                width: 20.0,
+                                child: Image.asset(
+                                  'githubLogo.png',
+                                ),
+                              ),
+                              Text(
+                                ' GitHub',
+                                style: TextStyle(
+                                  fontSize: 20, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: < Widget > [
+                      Container(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Designed by Samuel Chan with ',
+                          style: TextStyle(fontSize: _fontSize[2]),
+                        ),
+                      ),
+                      Container(
+                        child: FlutterLogo(),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )),
         ],
       ),
     );
