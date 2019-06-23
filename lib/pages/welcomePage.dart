@@ -242,7 +242,7 @@ class _welcomePageState extends State < welcomePage > {
                     borderRadius: BorderRadius.circular(5.0)),
                   onPressed: () {
                     html.window
-                      .open('mailto:plklfcgradparty2019@gmail.com', 'email');
+                      .open('https://github.com/samuelch727/grad_din_web2', 'github');
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
