@@ -1,4 +1,3 @@
-// import 'package:flutter_web_ui/ui.dart';
 import 'package:flutter_web/material.dart';
 import 'package:grad_din_web2/system/systemColor.dart';
 import 'dart:html'
@@ -92,7 +91,7 @@ class _welcomePageState extends State < welcomePage > {
                   ),
                 ),
                 Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topCenter,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: < Widget > [
@@ -114,6 +113,7 @@ class _welcomePageState extends State < welcomePage > {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: < Widget > [
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: < Widget > [
                               Text(
                                 '$dateRemain',
@@ -135,6 +135,7 @@ class _welcomePageState extends State < welcomePage > {
                               fontSize: _fontSize[0], color: Colors.white),
                           ),
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: < Widget > [
                               Text(
                                 '$hoursRemain',
@@ -156,6 +157,7 @@ class _welcomePageState extends State < welcomePage > {
                               fontSize: _fontSize[0], color: Colors.white),
                           ),
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: < Widget > [
                               Text(
                                 '$minutesRemain',
