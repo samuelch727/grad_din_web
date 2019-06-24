@@ -1,0 +1,38 @@
+[debug] [2019-06-24T16:08:58.403Z] ----------------------------------------------------------------------
+[debug] [2019-06-24T16:08:58.405Z] Command:       /usr/local/Cellar/node/12.1.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-06-24T16:08:58.405Z] CLI Version:   7.0.1
+[debug] [2019-06-24T16:08:58.405Z] Platform:      darwin
+[debug] [2019-06-24T16:08:58.405Z] Node Version:  v12.1.0
+[debug] [2019-06-24T16:08:58.418Z] Time:          Tue Jun 25 2019 00:08:58 GMT+0800 (Hong Kong Standard Time)
+[debug] [2019-06-24T16:08:58.418Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-24T16:08:58.427Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-24T16:08:58.427Z] > authorizing via signed-in user
+[debug] [2019-06-24T16:08:58.427Z] [iam] checking project plklfc-grad-din-2019 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-06-24T16:08:58.429Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-24T16:08:58.429Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-06-24T16:08:58.627Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-24T16:08:58.646Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/plklfc-grad-din-2019:testIamPermissions  
+
+[debug] [2019-06-24T16:08:59.702Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-24T16:08:59.706Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/plklfc-grad-din-2019  
+ 
+[debug] [2019-06-24T16:09:00.732Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'plklfc-grad-din-2019'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-06-24T16:09:00.737Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/plklfc-grad-din-2019/versions  
+
+[debug] [2019-06-24T16:09:00.738Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/plklfcgradparty2019test/versions  
+
+[debug] [2019-06-24T16:09:03.184Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-24T16:09:03.185Z] <<< HTTP RESPONSE 200
+[info] i  hosting[plklfc-grad-din-2019]: beginning deploy...
+[info] i  hosting[plklfc-grad-din-2019]: found 294 files in public
+[debug] [2019-06-24T16:09:03.243Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2019-06-24T16:09:05.167Z] [hosting] hash cache [cHVibGlj] stored for 294 files
+[debug] [2019-06-24T16:09:05.167Z] [hosting][hash queue][FINAL]
+[debug] [2019-06-24T16:09:05.168Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/plklfc-grad-din-2019/versions/9b3e47df0a62fd3e:populateFiles  
+ <request body omitted>

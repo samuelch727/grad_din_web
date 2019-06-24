@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["flutter_web|lib/material.dart","grad_din_web2|lib/system/systemColor.dart","grad_din_web2|lib/data.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html","async"],"hasMain":false}
+{"isEntrypoint":true,"deps":["flutter_web|lib/material.dart","grad_din_web2|lib/function.dart","grad_din_web2|lib/system/systemColor.dart","grad_din_web2|lib/data.dart","grad_din_web2|lib/pages/function.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["html","async"],"hasMain":false}

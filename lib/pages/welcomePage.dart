@@ -1,10 +1,12 @@
 import 'package:flutter_web/material.dart';
+import 'package:grad_din_web2/function.dart';
 import 'package:grad_din_web2/system/systemColor.dart';
 import 'dart:html'
 as html;
 import 'package:grad_din_web2/data.dart'
 as data;
 import 'dart:async';
+import 'function.dart';
 
 class welcomePage extends StatefulWidget {
   welcomePage({
@@ -59,6 +61,7 @@ class _welcomePageState extends State < welcomePage > {
     return Scaffold(
       backgroundColor: systemColor[0],
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: < Widget > [
           Container(
             height: _deviceHeight,
@@ -293,6 +296,123 @@ class _welcomePageState extends State < welcomePage > {
           ),
           Container(
             height: 30.0,
+          ),
+          Container(
+            alignment: Alignment.center,
+            color: Colors.black,
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+            color: Colors.black,
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              children: < Widget > [
+                Container(
+                  padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
+                  width: 450,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: < Widget > [
+                      Text(
+                        'Booking System',
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          color: Color.fromARGB(255, 255, 69, 58)),
+                      ),
+                      Text(
+                        'For Student Only',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          color: Color.fromARGB(200, 255, 69, 58)),
+                      ),
+                      Container(
+                        height: 10,
+                      ),
+                      Container(
+                        child: Text(
+                          'Select your seat and table you want via online booking system.',
+                          style: TextStyle(fontSize: 20.0, color: Colors.white),
+                        ),
+                        width: 450,
+                      ),
+                      Container(
+                        height: 10,
+                      ),
+                      FlatButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                        // color: Colors.pinkAccent,
+                        color: Colors.redAccent,
+                        child: Container(
+                          child: Text(
+                            'Book Now',
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          ),
+                          // color: Colors.white,
+                        ),
+                        onPressed: () {
+                          html.window.open(
+                            'https://elstondeveloping.ticketleap.com/plklfc-2019-graddin/',
+                            'buttonLink');
+                        },
+                      )
+                    ],
+                  ),
+                ),
+                customCard(
+                  id: 'no',
+                  enablePressDown: false,
+                  gradient: LinearGradient(colors: [
+                    Color(0xff8A2387),
+                    Color(0xffE94057),
+                    Color(0xffF27121)
+                  ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                  height: _deviceWidth > 600 ?
+                  380 / 1.5857725083 :
+                  (_deviceWidth / 1.3) / 1.5857725083,
+                  width: _deviceWidth > 600 ? 380 : _deviceWidth / 1.3,
+                  child: Container(
+                    child: Stack(
+                      children: < Widget > [
+                        Container(
+                          // padding: _deviceWidth > 500 ? EdgeInsets.all(20.0) : EdgeInsets.all(15.0),
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.keyboard_arrow_right,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: < Widget > [
+                            Text(
+                              'Chris Wong',
+                              style: TextStyle(
+                                color: Colors.white, fontSize: 30),
+                            ),
+                            // Spacer(),
+                            Row(
+                              children: < Widget > [
+                                Icon(Icons.airline_seat_recline_normal, color: Colors.white, size: 40,),
+                                Text(
+                                  ' A12',
+                                  style: TextStyle(
+                                    color: Colors.white, fontSize: 30),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    padding: _deviceWidth > 500 ?
+                    EdgeInsets.all(20.0) :
+                    EdgeInsets.all(15.0),
+                  )),
+              ],
+            ),
           ),
           _deviceWidth > 534 ?
           Container(

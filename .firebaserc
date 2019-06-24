@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "plklfc-grad-din-2019"
+  },
+  "targets": {
+    "plklfc-grad-din-2019": {
+      "hosting": {
+        "beta": [
+          "plklfcgradparty2019test"
+        ],
+        "public": [
+          "plklfc-grad-din-2019"
+        ]
+      }
+    }
   }
 }
