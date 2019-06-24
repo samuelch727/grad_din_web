@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:grad_din_web2/pages/welcomePageMobile.dart';
 import 'pages/welcomePage.dart';
+import 'pages/underConstruction.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,6 +36,7 @@ class _homePageState extends State<homePage> {
     return Scaffold(
       // body: deviceWidth > 735.0 ? welcomePage() : welcomePageMobile(),
       body: welcomePage(),
+      // body: underConstru(),
     );
   }
 }

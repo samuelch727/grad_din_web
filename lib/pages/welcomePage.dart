@@ -22,8 +22,8 @@ class _welcomePageState extends State < welcomePage > {
   var secondRemain;
   DateTime now;
   Timer timer;
+  DateTime events = DateTime(2019, 7, 5, 18, 15);
   void checkTime() {
-    DateTime events = DateTime(2019, 7, 5, 18, 15);
     timer = Timer.periodic(
       const Duration(seconds: 1),
         (Timer timer) => setState(() {
@@ -32,7 +32,6 @@ class _welcomePageState extends State < welcomePage > {
           hoursRemain = events.difference(now).inHours - dateRemain * 24;
           minutesRemain = events.difference(now).inMinutes -
             events.difference(now).inHours * 60;
-          // print('Date: $dateRemain Hour: $hoursRemain Min: $minutesRemain');
         }));
   }
 
@@ -43,6 +42,11 @@ class _welcomePageState extends State < welcomePage > {
   }
 
   Widget build(BuildContext context) {
+    now = DateTime.now();
+    dateRemain = events.difference(now).inDays;
+    hoursRemain = events.difference(now).inHours - dateRemain * 24;
+    minutesRemain =
+      events.difference(now).inMinutes - events.difference(now).inHours * 60;
     checkTime();
     var _deviceWidth = MediaQuery.of(context).size.width;
     var _deviceHeight = MediaQuery.of(context).size.height;

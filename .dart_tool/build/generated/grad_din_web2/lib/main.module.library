@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["flutter_web|lib/material.dart","grad_din_web2|lib/pages/welcomePageMobile.dart","grad_din_web2|lib/pages/welcomePage.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":true}
+{"isEntrypoint":true,"deps":["flutter_web|lib/material.dart","grad_din_web2|lib/pages/welcomePageMobile.dart","grad_din_web2|lib/pages/welcomePage.dart","grad_din_web2|lib/pages/underConstruction.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":true}
