@@ -43,6 +43,110 @@ class _welcomePageState extends State < welcomePage > {
     super.dispose();
   }
 
+  void bookAlert() {
+    print('alert');
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Column(
+            children: < Widget > [
+              Flexible(
+                // color: Colors.white,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: < Widget > [
+                      Text(
+                        'Event Introduction',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                      Text('Time and Date: July 5, 2019, at 1815'),
+                      Text(
+                        'Venue: ClubONE Kornhill in Vogue, 201 & 301, Kornhill Apartment, 2 Kornhill Road, Quarry Bay'),
+                      Container(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'System Introduction ',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                      Text(
+                        'This system is used for preserving the seats for the PLKLFC Graduation Dinner 2019. Graduates can get entry information and preserve the seat^ by selecting the table and seat through this system. Most of the seats can be selected except table A and B, and no need to seat according to classes. After you finished the preservation process, you will receive an email with detailed information about your preservation. Please be reminded to keep the emailed ticket for the entry of the event. The staff member MAY request you to show the QR code for the entry registration. Please DO NOT apply for 2 tickets. Otherwise, we may cancel your second preservation. '),
+                      Container(
+                        height: 20,
+                      ),
+                      Text(
+                        'Disclaimer',
+                        style: TextStyle(fontSize: 30),
+                      ),
+                      Text(
+                        '*All information related to the time and the location of the event, the invitation card shall prevail.'),
+                      Text(
+                        '^If you want to change your seat, please cancel your original ticket, then apply another one.'),
+                      Container(
+                        height: 10,
+                      ),
+                      Text(
+                        'All your personal information will be deleted once this event is ended.'),
+                      Container(
+                        height: 10,
+                      ),
+                      Text(
+                        'If you have any question please feel free to contact 6M Pang Chun Hei, Elston (Tel: 54042097 Email: plklfcgradparty2019@gmail.com)')
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          title: Text('Terms of service'),
+          actions: < Widget > [
+            FlatButton(
+              color: Colors.red[100],
+              child: Text(
+                'Close',
+                style: TextStyle(color: Colors.red[900], fontSize: 20),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              color: Colors.green[100],
+              child: Text(
+                'I Understand',
+                style: TextStyle(color: Colors.green[900], fontSize: 20),
+              ),
+              onPressed: () {
+                html.window.open(
+                  'https://elstondeveloping.ticketleap.com/plklfc-2019-graddin/',
+                  'buttonLink');
+              },
+            )
+          ],
+        );
+      });
+    // AlertDialog dialog = new AlertDialog(
+    // content: ListView(
+    //   children: < Widget > [
+    //     Text(
+    //       'Event Introduction Time and Date: July 5, 2019, at 1815 Venue: ClubONE Kornhill in Vogue, 201 & 301, Kornhill Apartment, 2 Kornhill Road, Quarry Bay'),
+    //     Container(
+    //       height: 10.0,
+    //     ),
+    //     Text(
+    //       'System Introduction This system is used for preserving the seats for the PLKLFC Graduation Dinner 2019. Graduates can get entry information and preserve the seat^ by selecting the table and seat through this system. Most of the seats can be selected except table A and B, and no need to seat according to classes. After you finished the preservation process, you will receive an email with detailed information about your preservation. Please be reminded to keep the emailed ticket for the entry of the event. The staff member MAY request you to show the QR code for the entry registration. Please DO NOT apply for 2 tickets. Otherwise, we may cancel your second preservation. '),
+    //     Text(
+    //       'Disclaimer *All information related to the time and the location of the event, the invitation card shall prevail. ^If you want to change your seat, please cancel your original ticket, then apply another one. All your personal information will be deleted once this event is ended. If you have any question please feel free to contact 6M Pang Chun Hei, Elston (Tel: 54042097 Email: plklfcgradparty2019@gmail.com) or 6M Chan Sze Nok, Samuel. (Tel: 54065096 Email: plklfcgradparty2019@gmail.com)')
+    //   ],
+    // ),
+    //   content: Text('test'),
+    //   actions: <Widget>[],
+    // );
+    // showDialog(context: context, child: dialog);
+  }
+
   Widget build(BuildContext context) {
     now = DateTime.now();
     dateRemain = events.difference(now).inDays;
@@ -302,14 +406,14 @@ class _welcomePageState extends State < welcomePage > {
             color: Colors.black,
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+            padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
             color: Colors.black,
             child: Wrap(
               alignment: WrapAlignment.center,
               children: < Widget > [
                 Container(
                   padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
-                  width: 450,
+                  width: 400,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: < Widget > [
@@ -319,11 +423,26 @@ class _welcomePageState extends State < welcomePage > {
                           fontSize: 30.0,
                           color: Color.fromARGB(255, 255, 69, 58)),
                       ),
-                      Text(
-                        'For Student Only',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          color: Color.fromARGB(200, 255, 69, 58)),
+                      Row(
+                        children: < Widget > [
+                          Text(
+                            'For Student Only',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Color.fromARGB(200, 255, 69, 58)),
+                          ),
+                          Container(width: 5,),
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            child: Text(
+                              'Preview',
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(3))),
+                          )
+                        ],
                       ),
                       Container(
                         height: 10,
@@ -333,7 +452,7 @@ class _welcomePageState extends State < welcomePage > {
                           'Select your seat and table you want via online booking system.',
                           style: TextStyle(fontSize: 20.0, color: Colors.white),
                         ),
-                        width: 450,
+                        width: 400,
                       ),
                       Container(
                         height: 10,
@@ -351,9 +470,7 @@ class _welcomePageState extends State < welcomePage > {
                           // color: Colors.white,
                         ),
                         onPressed: () {
-                          html.window.open(
-                            'https://elstondeveloping.ticketleap.com/plklfc-2019-graddin/',
-                            'buttonLink');
+                          bookAlert();
                         },
                       )
                     ],
@@ -395,7 +512,11 @@ class _welcomePageState extends State < welcomePage > {
                             // Spacer(),
                             Row(
                               children: < Widget > [
-                                Icon(Icons.airline_seat_recline_normal, color: Colors.white, size: 40,),
+                                Icon(
+                                  Icons.airline_seat_recline_normal,
+                                  color: Colors.white,
+                                  size: 40,
+                                ),
                                 Text(
                                   ' A12',
                                   style: TextStyle(
