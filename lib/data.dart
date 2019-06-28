@@ -15,13 +15,13 @@ var detailsData = [
     'buttonText' : 'Open in Google Map',
     'buttonLink' : 'https://goo.gl/maps/NQS6tu68AcdarJNW8'
   },
-  {
-    'title' : 'Parking',
-    'icon' : Icons.local_parking,
-    'content' : 'value!',
-    'buttonText' : 'value!',
-    'buttonLink' : 'https://goo.gl/maps/NQS6tu68AcdarJNW8'
-  }
+  // {
+  //   'title' : 'Parking',
+  //   'icon' : Icons.local_parking,
+  //   'content' : 'value!',
+  //   'buttonText' : 'value!',
+  //   'buttonLink' : 'https://goo.gl/maps/NQS6tu68AcdarJNW8'
+  // }
 ];
 
 final seat6j= [
