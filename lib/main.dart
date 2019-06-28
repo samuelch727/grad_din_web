@@ -2,6 +2,7 @@ import 'package:flutter_web/material.dart';
 import 'package:grad_din_web2/pages/welcomePageMobile.dart';
 import 'pages/welcomePage.dart';
 import 'pages/underConstruction.dart';
+import 'pages/seatingPlan.dart';
 
 void main() => runApp(MyApp());
 
