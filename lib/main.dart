@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'NotoSans'),
+      theme: ThemeData(fontFamily: 'NotoSans', canvasColor: Color.fromARGB(255, 72, 72, 74)),
       title: 'Graduration Party 2019',
       home: homePage(),
     );
