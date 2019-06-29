@@ -382,10 +382,10 @@ class _seatingPlanMoreState extends State<seatingPlanMore> {
                                               fontSize: 20.0,
                                               color: Colors.white)),
                                       Spacer(),
-                                      Icon(
-                                        Icons.keyboard_arrow_right,
-                                        color: Colors.white,
-                                      ),
+                                      // Icon(
+                                      //   Icons.keyboard_arrow_right,
+                                      //   color: Colors.white,
+                                      // ),
                                     ],
                                   ),
                                   decoration: BoxDecoration(
@@ -642,7 +642,6 @@ class _seatingPlanMoreMobileState extends State<seatingPlanMoreMobile> {
                       print('value changed to $_dropDownValue');
                     },
                     items: <String>[
-                      'All',
                       '6V',
                       '6J',
                       '6M',
@@ -673,7 +672,6 @@ class _seatingPlanMoreMobileState extends State<seatingPlanMoreMobile> {
                     temp = _dropDownValue;
                   });
                 }
-                print('temp is $temp');
                 if (element['Class'] == temp || temp == null) {
                   if (!tableDetails[_tableNo]) {
                     updateTable(_tableNo);
@@ -696,10 +694,10 @@ class _seatingPlanMoreMobileState extends State<seatingPlanMoreMobile> {
                               style: TextStyle(
                                   fontSize: 20.0, color: Colors.white)),
                           Spacer(),
-                          Icon(
-                            Icons.keyboard_arrow_right,
-                            color: Colors.white,
-                          ),
+                          // Icon(
+                          //   Icons.keyboard_arrow_right,
+                          //   color: Colors.white,
+                          // ),
                         ],
                       ),
                       decoration: BoxDecoration(

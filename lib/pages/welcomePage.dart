@@ -7,6 +7,7 @@ as data;
 import 'dart:async';
 import 'seatingPlan.dart';
 
+
 class welcomePage extends StatefulWidget {
   welcomePage({
     Key key
