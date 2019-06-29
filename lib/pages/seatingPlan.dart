@@ -215,7 +215,7 @@ var tableDetails = [
   false,
 ];
 
-var _dropDownValue = 'All';
+var _dropDownValue = '6V';
 
 class _seatingPlanMoreState extends State<seatingPlanMore> {
   @override
@@ -327,7 +327,6 @@ class _seatingPlanMoreState extends State<seatingPlanMore> {
                                   print('value changed to $_dropDownValue');
                                 },
                                 items: <String>[
-                                  'All',
                                   '6V',
                                   '6J',
                                   '6M',
@@ -565,6 +564,7 @@ class _seatingPlanMoreMobileState extends State<seatingPlanMoreMobile> {
       body: Container(
         color: Colors.black,
         child: ListView(
+          physics: BouncingScrollPhysics(),
           padding: EdgeInsets.all(10.0),
           children: <Widget>[
             FlatButton(

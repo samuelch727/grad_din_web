@@ -60,6 +60,7 @@ class _welcomePageState extends State < welcomePage > {
     return Scaffold(
       backgroundColor: systemColor[0],
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: < Widget > [
           Container(
             height: _deviceHeight,
